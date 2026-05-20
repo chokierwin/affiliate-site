@@ -41,12 +41,7 @@ export default function Home() {
             <h2 className="text-xl font-bold">{product.title}</h2>
             <p className="text-2xl font-bold text-orange-500 mt-2">{product.price}</p>
             <p className="text-yellow-500 mt-2">{product.rating}</p>
-            
-              href={product.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 block text-center bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl"
-            >
+            <a href={product.link} target="_blank" rel="noopener noreferrer" className="mt-5 block text-center bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl">
               🛒 Beli Sekarang
             </a>
           </div>
