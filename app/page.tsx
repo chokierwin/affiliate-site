@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import Papa from "papaparse";
+
 export default function Home() {
   const [products, setProducts] = useState<any[]>([]);
+
   useEffect(() => {
     Papa.parse(
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vSNpqVGxJw_DXtWB3NtTJF7UDFVucUwtexxvdsORjDCu-a4JbqxYSZNYem7HVdQtydHze0TwphhzG2o/pub?output=csv",
@@ -10,18 +12,17 @@ export default function Home() {
         download: true,
         header: true,
         complete: (results) => {
-          setProducts(results.data);
+          setProducts(results.data as any[]);
         },
       }
     );
   }, []);
+
   return (
     <main className="min-h-screen bg-gray-100">
-      {/* NAVBAR */}
       <nav className="bg-orange-500 text-white p-4 text-center text-2xl font-bold shadow">
         RacunBelanja.id26 🔥
       </nav>
-      {/* HEADER */}
       <div className="p-5">
         <h1 className="text-3xl font-bold text-center text-orange-500">
           Produk Viral Shopee
@@ -30,30 +31,16 @@ export default function Home() {
           Website affiliate auto update dari Google Sheets 🚀
         </p>
       </div>
-      {/* GRID PRODUK */}
       <div className="p-5 grid md:grid-cols-2 gap-5">
         {products.map((product, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl shadow-lg p-4 relative"
-          >
+          <div key={index} className="bg-white rounded-2xl shadow-lg p-4 relative">
             <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full">
               {product.badge}
             </span>
-            <img
-              src={product.image}
-              alt={product.title}
-              className="rounded-xl mb-4 w-full"
-            />
-            <h2 className="text-xl font-bold">
-              {product.title}
-            </h2>
-            <p className="text-2xl font-bold text-orange-500 mt-2">
-              {product.price}
-            </p>
-            <p className="text-yellow-500 mt-2">
-              {product.rating}
-            </p>
+            <img src={product.image} alt={product.title} className="rounded-xl mb-4 w-full" />
+            <h2 className="text-xl font-bold">{product.title}</h2>
+            <p className="text-2xl font-bold text-orange-500 mt-2">{product.price}</p>
+            <p className="text-yellow-500 mt-2">{product.rating}</p>
             
               href={product.link}
               target="_blank"
