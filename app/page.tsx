@@ -4,7 +4,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "RacunBelanjaShopee - Produk Viral Shopee",
   description: "Kumpulan produk viral Shopee pilihan terbaik harga murah.",
-  keywords: "shopee, produk viral, belanja murah, affiliate shopee",
 };
 
 export default function RootLayout({
