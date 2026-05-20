@@ -123,7 +123,7 @@ export default function Home() {
                 </a>
               </div>
             ) : (
-              <iframe src={getVideoEmbed(selected.video)} className="w-full aspect-video rounded-xl"
+              <iframe src={getVideoEmbed(selected.video) || ""} className="w-full aspect-video rounded-xl"
                 allowFullScreen />
             )}
             <a href={selected.link} target="_blank" rel="noopener noreferrer"
