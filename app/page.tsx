@@ -7,7 +7,67 @@ export default function Home() {
         RacunBelanja.id26 🔥
       </nav>
 
-      {/* CONTAINER */}
+      {/* HEADER */}
+      <div className="p-5">
+
+        <h1 className="text-3xl font-bold text-center text-orange-500">
+          Produk Viral Shopee
+        </h1>
+
+        <p className="text-center text-gray-500 mt-2">
+          Temukan produk viral pilihan terbaik hari ini 🚀
+        </p>
+
+        {/* SEARCH */}
+        <input
+          type="text"
+          placeholder="🔍 Cari produk viral..."
+          className="w-full mt-5 p-3 rounded-xl border outline-none"
+        />
+
+      </div>
+
+      {/* BANNER */}
+      <div className="px-5">
+        <div className="bg-orange-500 text-white p-5 rounded-2xl text-center mb-5 shadow">
+
+          <h2 className="text-2xl font-bold">
+            Flash Sale Shopee ⚡
+          </h2>
+
+          <p className="mt-2">
+            Diskon besar produk viral hari ini!
+          </p>
+
+        </div>
+      </div>
+
+      {/* KATEGORI */}
+      <div className="flex gap-3 overflow-x-auto px-5 mb-5">
+
+        <button className="bg-orange-500 text-white px-4 py-2 rounded-full whitespace-nowrap">
+          Semua
+        </button>
+
+        <button className="bg-white px-4 py-2 rounded-full shadow whitespace-nowrap">
+          Gadget
+        </button>
+
+        <button className="bg-white px-4 py-2 rounded-full shadow whitespace-nowrap">
+          Fashion
+        </button>
+
+        <button className="bg-white px-4 py-2 rounded-full shadow whitespace-nowrap">
+          Rumah
+        </button>
+
+        <button className="bg-white px-4 py-2 rounded-full shadow whitespace-nowrap">
+          Viral TikTok
+        </button>
+
+      </div>
+
+      {/* PRODUK GRID */}
       <div className="p-5 grid md:grid-cols-2 gap-5">
 
         {/* PRODUK 1 */}
@@ -64,7 +124,7 @@ export default function Home() {
           </span>
 
           <img
-            src="produk2.jpg"
+            src="produk5.jpg"
             alt="Produk 2"
             className="rounded-xl mb-4 w-full"
           />
