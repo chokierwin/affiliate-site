@@ -26,10 +26,7 @@ export default function Home() {
       <div className="p-5">
         <h1 className="text-3xl font-bold text-center text-orange-500">
           Produk Viral Shopee
-        </h1>
-        <p className="text-center text-gray-500 mt-2">
-          Website affiliate auto update dari Google Sheets 🚀
-        </p>
+        </h1>  
       </div>
       <div className="p-5 grid md:grid-cols-2 gap-5">
         {products.map((product, index) => (
