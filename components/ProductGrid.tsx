@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Product } from "@/lib/products";
+import { loadSocialBarAd } from "@/components/SocialBarAd";
 
 export default function ProductGrid({ initialProducts }: { initialProducts: Product[] }) {
   const [products] = useState<Product[]>(initialProducts);
@@ -85,6 +86,7 @@ export default function ProductGrid({ initialProducts }: { initialProducts: Prod
                 href={product.link}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
+                onClick={() => loadSocialBarAd()}
                 className="mt-5 block text-center bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl"
               >
                 🛒 Beli Sekarang
@@ -141,6 +143,7 @@ export default function ProductGrid({ initialProducts }: { initialProducts: Prod
               href={selected.link}
               target="_blank"
               rel="noopener noreferrer sponsored"
+              onClick={() => loadSocialBarAd()}
               className="mt-4 block text-center bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl"
             >
               🛒 Beli Sekarang
