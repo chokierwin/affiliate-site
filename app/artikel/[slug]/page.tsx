@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import JsonLd from "@/components/JsonLd";
-import AdSlot from "@/components/AdSlot";
+import NativeBannerAd from "@/components/NativeBannerAd";
 import { getAllArticlesMeta, getArticleBySlug } from "@/lib/articles";
 import { siteConfig } from "@/lib/site-config";
 
@@ -88,7 +88,7 @@ export default async function ArticlePage({ params }: Props) {
         />
 
         <div className="mt-10">
-          <AdSlot />
+          <NativeBannerAd />
         </div>
       </article>
     </main>

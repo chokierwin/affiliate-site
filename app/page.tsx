@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ProductGrid from "@/components/ProductGrid";
-import AdSlot from "@/components/AdSlot";
+import NativeBannerAd from "@/components/NativeBannerAd";
 import JsonLd from "@/components/JsonLd";
 import { getProducts } from "@/lib/products";
 import { siteConfig } from "@/lib/site-config";
@@ -51,7 +51,7 @@ export default async function Home() {
       <ProductGrid initialProducts={products} />
 
       <div className="pb-10">
-        <AdSlot />
+        <NativeBannerAd />
       </div>
     </main>
   );

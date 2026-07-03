@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import SocialBarAd from "@/components/SocialBarAd";
 import { siteConfig } from "@/lib/site-config";
 
 const geistSans = Geist({
@@ -80,6 +81,7 @@ export default function RootLayout({
         <JsonLd data={websiteSchema} />
         <div className="flex-1 flex flex-col">{children}</div>
         <Footer />
+        <SocialBarAd />
       </body>
     </html>
   );
