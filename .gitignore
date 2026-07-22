@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# automation script output (generated locally, not for source control)
+/automation/output/*
+!/automation/output/.gitkeep

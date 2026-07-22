@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "automation:fetch": "node automation/fetch-pending.mjs"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
+    "googleapis": "^173.0.0",
     "gray-matter": "^4.0.3",
     "next": "16.2.6",
     "papaparse": "^5.5.3",
