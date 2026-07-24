@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "automation:fetch": "node automation/fetch-pending.mjs"
+    "automation:fetch": "node automation/fetch-pending.mjs",
+    "automation:poster": "node automation/generate-poster.mjs"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^1.0.2",
     "dotenv": "^17.4.2",
     "googleapis": "^173.0.0",
     "gray-matter": "^4.0.3",
