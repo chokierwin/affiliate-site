@@ -17,6 +17,13 @@ function requireEnv(name) {
   return value;
 }
 
+function getSpreadsheetId() {
+  const raw = requireEnv("GOOGLE_SHEET_ID");
+  // Accept either a bare ID or a full Google Sheets URL (pasted via "Copy link")
+  const match = raw.match(/\/d\/([a-zA-Z0-9-_]+)/);
+  return match ? match[1] : raw.trim();
+}
+
 let cachedClient = null;
 
 export function getSheetsClient() {
@@ -56,7 +63,7 @@ const HEADER_MAP = {
  */
 export async function fetchAllRows() {
   const sheets = getSheetsClient();
-  const spreadsheetId = requireEnv("GOOGLE_SHEET_ID");
+  const spreadsheetId = getSpreadsheetId();
   const tab = requireEnv("GOOGLE_SHEET_TAB");
 
   const res = await sheets.spreadsheets.values.get({
@@ -104,7 +111,7 @@ export async function fetchPendingProducts() {
  */
 export async function updateUploadedStatus(sheetRow, value) {
   const sheets = getSheetsClient();
-  const spreadsheetId = requireEnv("GOOGLE_SHEET_ID");
+  const spreadsheetId = getSpreadsheetId();
   const tab = requireEnv("GOOGLE_SHEET_TAB");
   const { columnIndex } = await fetchAllRows();
 
