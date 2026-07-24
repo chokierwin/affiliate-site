@@ -68,5 +68,12 @@ async function main() {
 
 main().catch((err) => {
   console.error("Fatal error:", err.message);
+  const apiError = err.response?.data?.error;
+  if (apiError) {
+    console.error("API error details:", JSON.stringify(apiError, null, 2));
+  }
+  console.error(
+    "\nCommon causes: wrong GOOGLE_SHEET_ID, wrong GOOGLE_SHEET_TAB name (must match the tab name exactly), or the sheet wasn't shared with the service account email as Editor."
+  );
   process.exit(1);
 });
