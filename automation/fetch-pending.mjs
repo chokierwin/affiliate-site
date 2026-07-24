@@ -1,6 +1,11 @@
-import "dotenv/config";
-import fs from "node:fs/promises";
+import { config } from "dotenv";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+config({ path: path.join(__dirname, ".env") });
+
+import fs from "node:fs/promises";
 import { fetchPendingProducts } from "./lib/sheets.mjs";
 
 const OUTPUT_DIR = path.join(process.cwd(), "automation", "output");
