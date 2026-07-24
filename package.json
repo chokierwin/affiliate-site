@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "automation:fetch": "node automation/fetch-pending.mjs",
-    "automation:poster": "node automation/generate-poster.mjs"
+    "automation:poster": "node automation/generate-poster.mjs",
+    "automation:video": "node automation/generate-video.mjs"
   },
   "dependencies": {
     "@napi-rs/canvas": "^1.0.2",
